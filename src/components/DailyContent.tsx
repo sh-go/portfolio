@@ -1,5 +1,7 @@
 import { Box, HStack, Stack } from "@chakra-ui/react";
-import { FC } from "react";
+import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import React, { FC } from "react";
+import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import { TopListCard } from "./TopListCard";
 
@@ -31,15 +33,12 @@ export const DailyContent: FC<Props> = (props) => {
 								overflow="hidden"
 								textOverflow="ellipsis"
 							>
-								{study}
-							</Box>
-							<Box
-								w="230px"
-								whiteSpace="nowrap"
-								overflow="hidden"
-								textOverflow="ellipsis"
-							>
-								{want}
+								<ReactMarkdown
+									components={ChakraUIRenderer()}
+									skipHtml
+								>
+									{study}
+								</ReactMarkdown>
 							</Box>
 						</Stack>
 					</HStack>

@@ -21,7 +21,7 @@ export const CategoryList = () => {
 				<Link to="/daily/category/want">やりたいこと</Link>
 			</HoverLink>
 			<HoverLink>
-				<Link to="/daily/category/learning_time">勉強時間</Link>
+				<Link to="/daily/category/link">参考になったリンク集</Link>
 			</HoverLink>
 		</Stack>
 	);

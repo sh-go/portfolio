@@ -37,6 +37,8 @@ export const DailyCategoryView = () => {
 		title = "学習内容";
 	} else if (cat === "want") {
 		title = "やりたいこと";
+	} else if (cat === "link") {
+		title = "参考になったリンク集";
 	}
 
 	return (
