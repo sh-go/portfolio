@@ -15,7 +15,7 @@ type Props = {
 };
 
 export const DailyContent: FC<Props> = (props) => {
-	const { id, date, study, want, evaluation } = props;
+	const { id, date, study, evaluation } = props;
 
 	return (
 		<>
