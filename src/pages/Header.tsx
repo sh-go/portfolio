@@ -16,10 +16,16 @@ export const Header = () => {
 				</Heading>
 				<Spacer />
 				<HStack gap={5}>
-					<Heading fontSize={{ base: "sm", md: "md" }}>
+					<Heading
+						fontSize={{ base: "sm", md: "md" }}
+						_hover={{ opacity: 0.8 }}
+					>
 						<Link to="/daily">mameの学習ログ</Link>
 					</Heading>
-					<Heading fontSize={{ base: "sm", md: "md" }}>
+					<Heading
+						fontSize={{ base: "sm", md: "md" }}
+						_hover={{ opacity: 0.8 }}
+					>
 						<ChakraLink
 							href="https://caluq.herokuapp.com/login"
 							isExternal
