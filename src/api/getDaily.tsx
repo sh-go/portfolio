@@ -8,25 +8,22 @@ const toJson = async (res: Response) => {
 };
 
 export const getDaily = async () => {
-	const res = await fetch("https://portfolio-nu-lyart-32.vercel.app/daily", {
+	const res = await fetch("https://mameportfolio.herokuapp.com/daily", {
 		method: "GET",
 	});
 	return await toJson(res);
 };
 
 export const getDailyDetail = async (id?: string) => {
-	const res = await fetch(
-		`https://portfolio-nu-lyart-32.vercel.app/daily/${id}`,
-		{
-			method: "GET",
-		}
-	);
+	const res = await fetch(`https://mameportfolio.herokuapp.com/daily/${id}`, {
+		method: "GET",
+	});
 	return await toJson(res);
 };
 
 export const getCategory = async (cat?: string) => {
 	const res = await fetch(
-		`https://portfolio-nu-lyart-32.vercel.app/daily/${cat}`,
+		`https://mameportfolio.herokuapp.com/daily/${cat}`,
 		{
 			method: "GET",
 		}
