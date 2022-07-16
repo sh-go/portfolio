@@ -8,22 +8,28 @@ const toJson = async (res: Response) => {
 };
 
 export const getDaily = async () => {
-	const res = await fetch("http://localhost:8000/daily/", {
+	const res = await fetch("https://portfolio-nu-lyart-32.vercel.app/daily", {
 		method: "GET",
 	});
 	return await toJson(res);
 };
 
 export const getDailyDetail = async (id?: string) => {
-	const res = await fetch(`http://localhost:8000/daily/${id}`, {
-		method: "GET",
-	});
+	const res = await fetch(
+		`https://portfolio-nu-lyart-32.vercel.app/daily/${id}`,
+		{
+			method: "GET",
+		}
+	);
 	return await toJson(res);
 };
 
 export const getCategory = async (cat?: string) => {
-	const res = await fetch(`http://localhost:8000/daily/${cat}`, {
-		method: "GET",
-	});
+	const res = await fetch(
+		`https://portfolio-nu-lyart-32.vercel.app/daily/${cat}`,
+		{
+			method: "GET",
+		}
+	);
 	return await toJson(res);
 };
