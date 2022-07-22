@@ -12,6 +12,7 @@ export const DailyTop = () => {
 			study: "",
 			want: "",
 			learning_time: "",
+			link: "",
 			evaluation: "",
 		},
 	];
