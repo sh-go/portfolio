@@ -8,7 +8,7 @@ const toJson = async (res: Response) => {
 };
 
 export const getDaily = async () => {
-	const res = await fetch("https://mameportfolio.herokuapp.com/daily/", {
+	const res = await fetch("https://mameportfolio.herokuapp.com/daily", {
 		method: "GET",
 	});
 	return await toJson(res);
