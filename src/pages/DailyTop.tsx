@@ -24,7 +24,7 @@ export const DailyTop = () => {
 		getDaily()
 			.then((d) => {
 				setDaily(d);
-				setLoading(true);
+				setLoading(false);
 			})
 			.catch((e) => {
 				throw new Error(e);
