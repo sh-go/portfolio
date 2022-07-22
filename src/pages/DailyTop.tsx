@@ -20,16 +20,25 @@ export const DailyTop = () => {
 	const [daily, setDaily] = useState(initState);
 	const [loading, setLoading] = useState(false);
 
-	useEffect(() => {
-		getDaily()
-			.then((d) => {
-				setDaily(d);
-				setLoading(false);
-			})
-			.catch((e) => {
-				throw new Error(e);
-			});
-	}, []);
+	// useEffect(() => {
+	// 	getDaily()
+	// 		.then((d) => {
+	// 			setDaily(d);
+	// 			setLoading(false);
+	// 		})
+	// 		.catch((e) => {
+	// 			throw new Error(e);
+	// 		});
+	// }, []);
+
+	getDaily()
+		.then((d) => {
+			setDaily(d);
+			setLoading(false);
+		})
+		.catch((e) => {
+			throw new Error(e);
+		});
 
 	return (
 		<Box>
