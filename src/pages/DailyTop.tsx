@@ -18,7 +18,7 @@ export const DailyTop = () => {
 	];
 
 	const [daily, setDaily] = useState(initState);
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		getDaily()
