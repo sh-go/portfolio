@@ -15,7 +15,7 @@ export default function App() {
 		<ChakraProvider theme={theme}>
 			<BrowserRouter>
 				<Header />
-				<Box mx="16">
+				<Box mx={{ base: "8", md: "16" }}>
 					<Routes>
 						<Route path="/" element={<Top />} />
 						<Route path="/daily" element={<DailyTop />} />

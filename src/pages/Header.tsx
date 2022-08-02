@@ -10,9 +10,9 @@ import { Link } from "react-router-dom";
 export const Header = () => {
 	return (
 		<Box bg="teal.600">
-			<HStack p={5} mb={10} mr={9}>
+			<HStack p={5} mb={10} mr={{ base: "0", md: "9" }}>
 				<Heading fontSize={{ base: "md", md: "lg" }}>
-					<Link to="/">mameのポートフォリオ</Link>
+					<Link to="/">mame'sポートフォリオ</Link>
 				</Heading>
 				<Spacer />
 				<HStack gap={5}>
@@ -20,7 +20,7 @@ export const Header = () => {
 						fontSize={{ base: "sm", md: "md" }}
 						_hover={{ opacity: 0.8 }}
 					>
-						<Link to="/daily">mameの学習ログ</Link>
+						<Link to="/daily">学習ログ</Link>
 					</Heading>
 					<Heading
 						fontSize={{ base: "sm", md: "md" }}

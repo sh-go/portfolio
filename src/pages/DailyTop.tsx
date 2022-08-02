@@ -1,5 +1,7 @@
-import { Box, Heading, Spinner } from "@chakra-ui/react";
+import { Heading, Spinner } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import MediaQuery from "react-responsive";
+
 import { getDaily } from "../api/getDaily";
 import { CategoryListCard } from "../components/CategoryListCard";
 import { DailyContent } from "../components/DailyContent";
@@ -32,7 +34,7 @@ export const DailyTop = () => {
 	}, []);
 
 	return (
-		<Box>
+		<>
 			{loading ? (
 				<Spinner
 					thickness="4px"
@@ -43,22 +45,22 @@ export const DailyTop = () => {
 				/>
 			) : (
 				<>
-					<Box>
-						<Heading mb={7}>mameの学習ログ</Heading>
-						{daily.map((d) => (
-							<DailyContent
-								id={d.id}
-								date={d.date}
-								study={d.study}
-								want={d.want}
-								learning_time={d.learning_time}
-								evaluation={d.evaluation}
-							/>
-						))}
-					</Box>
-					<CategoryListCard />
+					<Heading mb={7}>mameの学習ログ</Heading>
+					{daily.map((d) => (
+						<DailyContent
+							id={d.id}
+							date={d.date}
+							study={d.study}
+							want={d.want}
+							learning_time={d.learning_time}
+							evaluation={d.evaluation}
+						/>
+					))}
+					<MediaQuery query="(min-width:767px)">
+						<CategoryListCard />
+					</MediaQuery>
 				</>
 			)}
-		</Box>
+		</>
 	);
 };
