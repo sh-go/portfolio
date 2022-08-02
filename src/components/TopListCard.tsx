@@ -33,7 +33,7 @@ export const TopListCard: FC<Props> = (props) => {
 
 			<MediaQuery query="(min-width:767px)">
 				<Button
-					w="sm"
+					w="md"
 					h="auto"
 					p={5}
 					mx={3}

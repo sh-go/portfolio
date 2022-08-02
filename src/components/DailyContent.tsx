@@ -3,6 +3,8 @@ import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import React, { FC } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
+import MediaQuery from "react-responsive";
+
 import { TopListCard } from "./TopListCard";
 
 type Props = {
@@ -27,19 +29,36 @@ export const DailyContent: FC<Props> = (props) => {
 							<Box>{evaluation}</Box>
 						</Stack>
 						<Stack>
-							<Box
-								w="230px"
-								whiteSpace="nowrap"
-								overflow="hidden"
-								textOverflow="ellipsis"
-							>
-								<ReactMarkdown
-									components={ChakraUIRenderer()}
-									skipHtml
+							<MediaQuery minWidth="767px">
+								<Box
+									w="290px"
+									whiteSpace="nowrap"
+									overflow="hidden"
+									textOverflow="ellipsis"
 								>
-									{study}
-								</ReactMarkdown>
-							</Box>
+									<ReactMarkdown
+										components={ChakraUIRenderer()}
+										skipHtml
+									>
+										{study}
+									</ReactMarkdown>
+								</Box>
+							</MediaQuery>
+							<MediaQuery maxWidth="767px">
+								<Box
+									w="220px"
+									whiteSpace="nowrap"
+									overflow="hidden"
+									textOverflow="ellipsis"
+								>
+									<ReactMarkdown
+										components={ChakraUIRenderer()}
+										skipHtml
+									>
+										{study}
+									</ReactMarkdown>
+								</Box>
+							</MediaQuery>
 						</Stack>
 					</HStack>
 				</TopListCard>
