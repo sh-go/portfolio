@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import { Box, Heading, Spinner, Stack } from "@chakra-ui/react";
+import { Box, Center, Heading, Stack } from "@chakra-ui/react";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import MediaQuery from "react-responsive";
 
 import { getDailyDetail } from "../api/getDaily";
 import { CategoryListCard } from "./CategoryListCard";
 import { ListCard } from "./ListCard";
+import { LoadingIcon } from "./LoadingIcon";
 
 export const DailyDetail = () => {
 	const initState = {
@@ -34,13 +36,9 @@ export const DailyDetail = () => {
 	return (
 		<Box>
 			{loading ? (
-				<Spinner
-					thickness="4px"
-					speed="1.0s"
-					emptyColor="gray.200"
-					color="blue.500"
-					size="xl"
-				/>
+				<Center w="1130px" h="400px">
+					<LoadingIcon />
+				</Center>
 			) : (
 				<>
 					<Heading mb={7}>学習ログ</Heading>
@@ -82,7 +80,9 @@ export const DailyDetail = () => {
 							</Box>
 						</Stack>
 					</ListCard>
-					<CategoryListCard />
+					<MediaQuery minWidth="767px">
+						<CategoryListCard />
+					</MediaQuery>
 				</>
 			)}
 		</Box>

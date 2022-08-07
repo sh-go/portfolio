@@ -1,10 +1,11 @@
-import { Heading, Spinner } from "@chakra-ui/react";
+import { Center, Heading } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import MediaQuery from "react-responsive";
 
 import { getDaily } from "../api/getDaily";
 import { CategoryListCard } from "../components/CategoryListCard";
 import { DailyContent } from "../components/DailyContent";
+import { LoadingIcon } from "../components/LoadingIcon";
 
 export const DailyTop = () => {
 	const initState = [
@@ -20,7 +21,7 @@ export const DailyTop = () => {
 	];
 
 	const [daily, setDaily] = useState(initState);
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		getDaily()
@@ -36,13 +37,9 @@ export const DailyTop = () => {
 	return (
 		<>
 			{loading ? (
-				<Spinner
-					thickness="4px"
-					speed="1.0s"
-					emptyColor="gray.200"
-					color="blue.500"
-					size="xl"
-				/>
+				<Center w="1130px" h="400px">
+					<LoadingIcon />
+				</Center>
 			) : (
 				<>
 					<Heading mb={7}>mameの学習ログ</Heading>

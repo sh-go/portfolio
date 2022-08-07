@@ -1,4 +1,4 @@
-import { Box, Heading, Spinner } from "@chakra-ui/react";
+import { Box, Center, Heading } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useParams } from "react-router-dom";
@@ -7,6 +7,7 @@ import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import { getCategory } from "../api/getDaily";
 import { CategoryListCard } from "./CategoryListCard";
 import { ListCard } from "./ListCard";
+import { LoadingIcon } from "./LoadingIcon";
 
 export const DailyCategoryView = () => {
 	const initState = [
@@ -44,13 +45,9 @@ export const DailyCategoryView = () => {
 	return (
 		<Box>
 			{loading ? (
-				<Spinner
-					thickness="4px"
-					speed="1.0s"
-					emptyColor="gray.200"
-					color="blue.500"
-					size="xl"
-				/>
+				<Center w="1130px" h="400px">
+					<LoadingIcon />
+				</Center>
 			) : (
 				<>
 					<Box>
